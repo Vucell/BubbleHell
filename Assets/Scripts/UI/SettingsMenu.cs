@@ -4,7 +4,8 @@ using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public Settings Settings;
+    //public int quality;
+    public float volume = 0.7f;
     [SerializeField] private Slider qualitySlider;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private AudioMixer audioMixer;
@@ -16,19 +17,26 @@ public class SettingsMenu : MonoBehaviour
 
     public void RefreshSettings()
     {
-        qualitySlider.value = Settings.quality;
-        volumeSlider.value = Settings.volume;
+        //qualitySlider.value = quality;
+        volumeSlider.value = volume;
 
         Apply();
+        
     }
 
     public void Apply()
     {
-        Settings.quality = (int)qualitySlider.value;
-        Settings.volume = volumeSlider.value;
+        //quality = (int)qualitySlider.value;
+        volume = volumeSlider.value;
 
-        QualitySettings.SetQualityLevel(Settings.quality);
-        audioMixer.SetFloat("Master", Mathf.Log10(Settings.volume) * 20);
+        //QualitySettings.SetQualityLevel(quality);
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+
+        //Debug.Log("Quality " + qualitySlider.value);
+        Debug.Log("Volume " + volumeSlider.value);
+
+        //Debug.Log("Quality set " + quality);
+        Debug.Log("Volume set " + volume);
     }
 
 }
