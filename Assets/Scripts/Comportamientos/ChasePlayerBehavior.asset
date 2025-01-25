@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c8031cb569f7647aacc9f8ad2cedb1, type: 3}
   m_Name: ChasePlayerBehavior
   m_EditorClassIdentifier: 
-  behaviorSpeed: 2
-  slowDownRadius: 2
+  behaviorSpeed: 1
+  slowDownRadius: 3

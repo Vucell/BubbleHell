@@ -11,7 +11,7 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
 
     [Header("Behavior Settings")]
     public List<SCRIPTABLE_EnemyBehavior> behaviors; // Lista de comportamientos
-    public float movementSpeed = 2f;     // Velocidad base del enemigo
+    //public float movementSpeed = 2f;     // Velocidad base del enemigo
     private SCRIPTABLE_EnemyBehavior currentBehavior; // Comportamiento actual
 
     private void Start()
@@ -61,7 +61,10 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
     {
         if (damageTextPrefab != null)
         {
+            // Crear el texto de daño en la posición del enemigo.
             GameObject damageText = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
+
+            // Configurar el texto de daño.
             SCRT_Text_Damage damageTextScript = damageText.GetComponent<SCRT_Text_Damage>();
             damageTextScript.Initialize(damage, damageTextDuration, damageTextSpeed);
         }
