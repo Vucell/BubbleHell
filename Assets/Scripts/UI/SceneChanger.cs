@@ -1,26 +1,29 @@
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+//using UnityEditor.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
+
     public void StartGame()
     {
-        EditorSceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void RestartGame()
     {
-        EditorSceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void BackToMain()
     {
-        EditorSceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
         Debug.Log("To the main menu");
     }
 
     public void ToCredits()
     {
-        EditorSceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits");
         Debug.Log("To the credits");
     }
+
 }

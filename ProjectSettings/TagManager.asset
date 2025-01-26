@@ -10,6 +10,8 @@ TagManager:
   - spawnpoint
   - Text_Score
   - Text_EXP
+  - FinalScore
+  - CanvasScore
   layers:
   - Default
   - TransparentFX

@@ -23,7 +23,7 @@ public class NuevaHabilidad : MonoBehaviour
     public void Start()
     {
         burstShootBehavior.burstCount = 1;
-        burstShootBehavior.SpeedShot = 2;
+        burstShootBehavior.SpeedShot = 1;
     }
 
     public void cambioStats(int indexID)

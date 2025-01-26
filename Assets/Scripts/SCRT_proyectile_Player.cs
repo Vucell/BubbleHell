@@ -14,6 +14,14 @@ public class SCRT_proyectile_Player : MonoBehaviour
 
     public bool EnemyShoot;
 
+    public GameObject ExpSys;
+
+    public void Start()
+    {
+        ExpSys = GameObject.FindGameObjectWithTag("Text_EXP");
+
+    }
+
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
@@ -33,6 +41,7 @@ public class SCRT_proyectile_Player : MonoBehaviour
         {
             // Aquí podrías implementar lógica adicional, como reducir vida al enemigo
             //Destroy(collision.gameObject); // Destruir el enemigo
+            ExpSys.GetComponent<SCRT_ExpSystem>().FinalGame();
 
             Destroy(gameObject); // Destruir el proyectil
             Destroy(collision.gameObject);

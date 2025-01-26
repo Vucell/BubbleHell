@@ -18,6 +18,9 @@ public class SCRT_ExpSystem : MonoBehaviour
     //SCORE SYSTEM
     public int INT_TOTAL_Score;
 
+    public GameObject canvasScore;
+    public GameObject FinalScore;
+
 
     public List<SCRT_Habilidad> habilidades;  // Lista de habilidades (ScriptableObjects)
 
@@ -38,6 +41,11 @@ public class SCRT_ExpSystem : MonoBehaviour
 
     private void Start()
     {
+        canvasScore = GameObject.FindGameObjectWithTag("CanvasScore");
+        FinalScore = GameObject.FindGameObjectWithTag("FinalScore");
+        canvasScore.SetActive(false);
+
+
         expBar.maxValue = maxExp; // Configurar el valor máximo del Slider
         expBar.value = currentExp; // Inicializar el valor actual
 
@@ -165,5 +173,11 @@ public class SCRT_ExpSystem : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f; // Reanudar el tiempo del juego
         pauseCanvas.enabled = false; // Ocultar el canvas de pausa
+    }
+
+    public void FinalGame()
+    {
+        canvasScore.SetActive(true);
+        FinalScore.GetComponent<Text>().text = "SCORE: " + INT_TOTAL_Score.ToString();
     }
 }

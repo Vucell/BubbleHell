@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SCRT_proyectile_Enemy : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public class SCRT_proyectile_Enemy : MonoBehaviour
     public float damage = 5f;
 
     public Vector2 direction;
+
+    //public GameObject ExpSys;
+
+    public void Start()
+    {
+        //ExpSys = GameObject.FindGameObjectWithTag("Text_EXP");
+
+    }
 
     public void SetDirection(Vector2 dir)
     {
@@ -26,6 +35,8 @@ public class SCRT_proyectile_Enemy : MonoBehaviour
 
         if (collision.CompareTag("player"))
         {
+            //ExpSys.GetComponent<SCRT_ExpSystem>().FinalGame();
+
             Destroy(collision.gameObject);
             Destroy(gameObject); // Destruir el proyectil.
         }

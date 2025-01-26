@@ -16,6 +16,9 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
     public GameObject ExpSys;
     public float baseExp = 10f; // Experiencia base otorgada por enemigo
 
+    public GameObject canvasScore;
+    public GameObject FinalScore;
+
     [Header("Behavior Settings")]
     public List<SCRIPTABLE_EnemyBehavior> behaviors; // Lista de comportamientos
     //public float movementSpeed = 2f;     // Velocidad base del enemigo
@@ -51,6 +54,9 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
         if (collision.CompareTag("player"))
         {
             Debug.Log("Jugador muerto");
+
+            ExpSys.GetComponent<SCRT_ExpSystem>().FinalGame();
+
             Destroy(collision.gameObject); // Destruir el jugador
         }
     }
