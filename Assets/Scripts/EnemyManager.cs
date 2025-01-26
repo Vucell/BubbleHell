@@ -14,6 +14,10 @@ public class EnemyManager : MonoBehaviour
     private int currentRound = 1; // Ronda actual
     private bool isInfinite = false; // Indica si el modo infinito está activo
 
+    [Header("Experience Settings")]
+    public SCRT_ExpSystem expSystem; // Referencia al sistema de experiencia
+    public float baseExp = 10f; // Experiencia base otorgada por enemigo
+
     [Header("Spawn Settings")]
     public List<Transform> spawnCercanos; // Puntos de spawn cercanos
     public List<Transform> spawnLejanos; // Puntos de spawn lejanos
@@ -118,6 +122,13 @@ public class EnemyManager : MonoBehaviour
             if (enemyScript != null)
             {
                 enemyScript.health += healthIncreasePerRound * (round - 1);
+
+                // Suscribirse al evento OnDeath para otorgar experiencia
+                //enemyScript.OnDeath += () =>
+                //{
+                //    //float expGranted = baseExp * currentRound; // Incrementar experiencia por ronda
+                //    expSystem.AddExperience(baseExp); // Añadir experiencia al sistema
+                //};
             }
 
             yield return new WaitForSeconds(spawnInterval);
@@ -142,6 +153,13 @@ public class EnemyManager : MonoBehaviour
             if (enemyScript != null)
             {
                 enemyScript.health += (int)infiniteHealthIncrease;
+
+                // Suscribirse al evento OnDeath para otorgar experiencia
+                //enemyScript.OnDeath += () =>
+                //{
+                //    //float expGranted = baseExp * currentRound; // Incrementar experiencia por ronda
+                //    expSystem.AddExperience(baseExp); // Añadir experiencia al sistema
+                //};
             }
 
             yield return new WaitForSeconds(spawnInterval);
@@ -154,6 +172,7 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+
 
     private void ClearEnemies()
     {

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35afc79efb152024eacd3639e2e98984, type: 3}
+  m_Name: Upvelocidad
+  m_EditorClassIdentifier: 
+  HabilidadSprite:
+  - {fileID: -6720416445885586127, guid: 5e550814c1c84dc4fa2d7144bee41961, type: 3}
+  - {fileID: -219634462369621440, guid: 13ca528e28eaf634398cf1a1fe62ebee, type: 3}
+  - {fileID: -3741500973973999477, guid: c77a7a0c67330e44e93eb4f585f47267, type: 3}
+  - {fileID: -400454427102019709, guid: 0d72814e560071f4b9af9f724b93b388, type: 3}
+  burstShootBehavior: {fileID: 11400000, guid: 7a665b7ce1118a04fb653c3af9300490, type: 2}
+  playerobject: {fileID: 0}
+  playermovement: {fileID: 0}
+  damage: 5
+  balines: 1
+  speedShoot: 1
+  speedplayer: 1
+  IDHabilidad: 3

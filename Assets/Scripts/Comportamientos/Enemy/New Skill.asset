@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35afc79efb152024eacd3639e2e98984, type: 3}
+  m_Name: New Skill
+  m_EditorClassIdentifier: 
+  habilidadNombre: 
+  habilidadSprite: {fileID: 5701952648988604048, guid: eaf055ce59511944ba102f73d79ae6d6, type: 3}
+  habilidadParametro: {fileID: 11400000, guid: ed8174b46584dd1439e1712e39f4f06d, type: 2}

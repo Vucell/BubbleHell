@@ -8,6 +8,8 @@ TagManager:
   - player
   - border
   - spawnpoint
+  - Text_Score
+  - Text_EXP
   layers:
   - Default
   - TransparentFX

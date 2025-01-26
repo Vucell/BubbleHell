@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3561d14d0430644a55bbeb4b66b75d, type: 3}
-  m_Name: BurstShootBehavior
+  m_Script: {fileID: 11500000, guid: 847b4287d81d4554d93870433c010b85, type: 3}
+  m_Name: New Habilidad Parametro
   m_EditorClassIdentifier: 
-  burstCount: 1
-  angleBetweenProjectiles: 15
-  SpeedShot: 1
+  valor: 0

@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.Experimental.Rendering;
 
 public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
 {
@@ -8,6 +10,11 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
     public GameObject damageTextPrefab;
     public float damageTextDuration = 1.5f;
     public float damageTextSpeed = 2f;
+
+    public int INT_Score;
+    public GameObject TXT_Score;
+    public GameObject ExpSys;
+    public float baseExp = 10f; // Experiencia base otorgada por enemigo
 
     [Header("Behavior Settings")]
     public List<SCRIPTABLE_EnemyBehavior> behaviors; // Lista de comportamientos
@@ -21,6 +28,8 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
         {
             currentBehavior = behaviors[0]; // Seleccionar el primer comportamiento como predeterminado
         }
+        TXT_Score = GameObject.FindGameObjectWithTag("Text_Score");
+        ExpSys = GameObject.FindGameObjectWithTag("Text_EXP");
     }
 
     private void Update()
@@ -45,7 +54,8 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
             Destroy(collision.gameObject); // Destruir el jugador
         }
     }
-
+    
+    public event System.Action OnDeath;
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -53,6 +63,8 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
 
         if (health <= 0)
         {
+            OnDeath?.Invoke();
+            
             Die();
         }
     }
@@ -70,8 +82,22 @@ public class SCRT_Enemy_DMGRecived_02 : MonoBehaviour
         }
     }
 
+
+    public void newScore()
+    {
+        //ExpSys.INT_TOTAL_Score = ExpSys.INT_TOTAL_Score + INT_Score;
+        ExpSys.GetComponent<SCRT_ExpSystem>().INT_TOTAL_Score = ExpSys.GetComponent<SCRT_ExpSystem>().INT_TOTAL_Score + INT_Score;
+        //TXT_Score.text = "SCORE: " + ExpSys.INT_TOTAL_Score.ToString();
+        TXT_Score.GetComponent<Text>().text = "SCORE: " + ExpSys.GetComponent<SCRT_ExpSystem>().INT_TOTAL_Score.ToString();
+    }
+
+
     private void Die()
     {
+
+        ExpSys.GetComponent<SCRT_ExpSystem>().AddExperience(baseExp);
+        newScore();
+
         Debug.Log("Enemigo muerto");
         Destroy(gameObject);
     }

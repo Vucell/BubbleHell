@@ -127,6 +127,10 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 1671083477712475229, guid: db371d94ed57a884c95086e863b7d9bd, type: 3}
   damageTextDuration: 1.5
   damageTextSpeed: 2
+  INT_Score: 12
+  TXT_Score: {fileID: 0}
+  ExpSys: {fileID: 0}
+  baseExp: 10
   behaviors:
   - {fileID: 11400000, guid: 9e7fd186c50636740ac4d556c5786598, type: 2}
 --- !u!61 &2739121073083303187

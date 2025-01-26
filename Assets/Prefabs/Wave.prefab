@@ -139,5 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRadius: 5
   duration: 3
-  collider2D: {fileID: 0}
   spriteRenderer: {fileID: 0}

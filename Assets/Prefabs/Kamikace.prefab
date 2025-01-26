@@ -173,6 +173,10 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 1671083477712475229, guid: db371d94ed57a884c95086e863b7d9bd, type: 3}
   damageTextDuration: 1.5
   damageTextSpeed: 2
+  INT_Score: 10
+  TXT_Score: {fileID: 0}
+  ExpSys: {fileID: 0}
+  baseExp: 10
   behaviors: []
 --- !u!61 &1958959485350528833
 BoxCollider2D:
